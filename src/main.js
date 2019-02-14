@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import '@/assets/styles/main.scss' // global css
+// import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax"
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
