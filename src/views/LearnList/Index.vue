@@ -1,6 +1,6 @@
 <template>
   <div class="learn-list">
-    <h1>尚未完工</h1>
+    <h1>施工中</h1>
   </div>
 </template>
 

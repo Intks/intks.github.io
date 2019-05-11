@@ -27,16 +27,19 @@ export default {
   flex-direction: column;
   width: 100%;
   margin-bottom: 16px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   animation: floatUp 1s forwards;
   opacity: 0;
+  border-radius: 4px;
+  overflow: hidden;
   .intro-title-block {
     line-height: 20px;
     padding: 24px;
     margin-bottom: 24px;
     width: calc(100% - 48px);
     text-align: center;
-    background-color: #596874;
+    background-color: #5a5b69;
     color: #fff;
     .intro-title {
       font-weight: bold;
@@ -51,10 +54,10 @@ export default {
     justify-content: center;
     padding: 0px 24px 24px 24px;
     a {
-      color: #62C296;
+      color: #69779b;
       font-weight: bold;
       text-decoration: none;
-      transition: .5s;
+      transition: 0.5s;
       &:hover {
         transform: translateY(2px);
       }
@@ -65,12 +68,12 @@ export default {
   }
   @keyframes floatUp {
     0% {
-        transform: translateY(300px);
-        opacity: 0;
+      transform: translateY(300px);
+      opacity: 0;
     }
     100% {
-        transform: translateY(0px);
-        opacity: 1;
+      transform: translateY(0px);
+      opacity: 1;
     }
   }
 }

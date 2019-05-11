@@ -1,8 +1,10 @@
 <template>
   <div class="skill-list">
     <div class="skill-item" v-for="(skill, index) in skillList" :key="index">
-      <div class="skill-title"><img class="skill-img" :src="`${skill.imgUrl}`" alt="">{{skill.title}}</div>
-      <div class="skill-content">{{skill.content}}</div>
+      <div class="skill-title">
+        <img class="skill-img" v-if="skill.imgUrl" :src="`${skill.imgUrl}`" alt="">{{skill.title}}
+      </div>
+      <div class="skill-content" v-html="skill.content"></div>
     </div>
   </div>
 </template>
@@ -19,8 +21,8 @@ export default {
 <style lang="scss" scoped>
 .skill-list {
   padding: 0px 8px;
-  .skill-item {
-  }
+  display: flex;
+  flex-direction: column;
   .skill-img {
     height: 20px;
     width: 20px;
@@ -33,7 +35,7 @@ export default {
   }
   .skill-content {
     padding: 0px 48px;
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 </style>
