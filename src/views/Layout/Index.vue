@@ -33,12 +33,10 @@
 </template>
 
 <script>
-import IntroBlock from './components/IntroBlock'
 import InfoBlock from './components/InfoBlock'
 export default {
   name: 'MainPage',
   components: {
-    IntroBlock,
     InfoBlock
   },
   data () {
