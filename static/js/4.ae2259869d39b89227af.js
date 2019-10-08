@@ -1,0 +1,2 @@
+webpackJsonp([4],{HU77:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"note"},[t("transition",{attrs:{name:"fade",mode:"out-in"}},[t("router-view")],1)],1)},staticRenderFns:[]};var r=n("VU/8")({name:"Note"},a,!1,function(e){n("ysm7")},"data-v-2673bba6",null);t.default=r.exports},ysm7:function(e,t){}});
+//# sourceMappingURL=4.ae2259869d39b89227af.js.map
