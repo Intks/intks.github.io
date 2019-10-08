@@ -1,10 +1,14 @@
 <template>
   <div class="main-page">
-    <div class="landing-container" v-if="isLanding" @click="intoMainpage">
-      <info-block></info-block>
-      <div class="next">點擊進入</div>
+    <div class="mask" v-if="!isFinished">
+      <div class="mask-item" v-for="(item, index) in 10" :key="index" ref="masks"></div>
     </div>
-    <div class="main-page-container" v-else>
+    <div class="landing-container" v-if="isLanding" @click="intoMainpage">
+      <h1>Alex</h1>
+      <h2>Blog</h2>
+      <div class="next">Enter</div>
+    </div>
+    <div class="main-page-container" v-else ref="box">
       <div class="menu">
         <router-link class="link" to="/about">About</router-link>
         <router-link class="link" to="/note">Note</router-link>
@@ -34,19 +38,41 @@
 
 <script>
 import InfoBlock from './components/InfoBlock'
+import { TimelineLite } from 'gsap'
 export default {
   name: 'MainPage',
   components: {
     InfoBlock
   },
+  mounted () {
+    const { masks } = this.$refs
+    const timeline = new TimelineLite()
+    for (let i = 0; i < 10; i++) {
+      if (i % 2 !== 0) {
+        timeline.to(masks[i], 0.5, { x: '100%' })
+      } else {
+        timeline.to(masks[i], 0.5, { x: '-100%' })
+      }
+    }
+    setTimeout(() => {
+      console.log('finished')
+      this.isFinished = true
+    }, 5000)
+  },
   data () {
     return {
-      isLanding: true
+      isLanding: true,
+      isFinished: false
     }
   },
   methods: {
     intoMainpage () {
       this.isLanding = false
+      setTimeout(() => {
+        const box = this.$refs.box
+        const timeline = new TimelineLite()
+        timeline.to(box, 2, { x: '-100%' })
+      }, 10)
     }
   }
 }
@@ -55,36 +81,57 @@ export default {
 <style lang="scss" scoped>
 .main-page {
   box-sizing: border-box;
-  background-color: #38384c;
+  background-color: #222;
   min-height: 100vh;
   transition: 0.2s;
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 64px;
   @media screen and (max-width: 811px) {
     flex-direction: column;
   }
+  .mask {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    .mask-item {
+      height: 10%;
+      width: 100%;
+      background-color: #fff;
+    }
+  }
   .landing-container {
     padding: 16px 24px;
-    box-shadow: 0px 0px 1px 1px #eee;
-    background-color: #fff;
     border-radius: 8px;
     height: 100%;
     cursor: pointer;
     animation: float 2s infinite alternate;
-    /deep/ .info-block {
-      animation: none;
-      opacity: 1;
-      background-color: transparent;
-      box-shadow: none;
-      /deep/ .avatar {
-        max-width: 250px;
-      }
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      margin-bottom: 16px;
+      font-size: 24px;
+      color: #fff;
+    }
+    h2 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 16px;
     }
     .next {
       text-align: center;
       font-weight: bold;
       color: #9aa2ae;
+      font-size: 16px;
     }
   }
   .main-page-container {
@@ -94,6 +141,7 @@ export default {
     z-index: 10;
     display: flex;
     border-radius: 4px;
+    right: -100%;
     background-color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12),
       0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.12);

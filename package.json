@@ -8,10 +8,11 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "cypress": "cypress run"
   },
   "dependencies": {
-    "gsap": "^2.0.2",
+    "gsap": "^2.1.2",
     "node-sass": "^4.11.0",
     "sass": "^1.17.0",
     "sass-loader": "^7.1.0",
@@ -32,6 +33,7 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "cypress": "^3.4.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
