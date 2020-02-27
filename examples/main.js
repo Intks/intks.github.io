@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import AlexUI from '../packages'
+import AlexUI from '../packages/index'
 
 Vue.config.productionTip = false
 

@@ -36,14 +36,13 @@ export default {
   },
   methods: {
     handleClick (e) {
-      console.log(e)
       this.$emit('click', e)
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .alex-button {
   display: inline-block;
   line-height: 1;
