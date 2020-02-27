@@ -1,0 +1,8 @@
+test/
+packages/
+public/
+
+vue.config.js
+babel.config.js
+*.map
+.editorconfig.js
