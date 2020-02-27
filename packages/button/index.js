@@ -1,7 +1,7 @@
-import Button from './src/button.vue'
+import AlexButton from './src/button.vue'
 
-Button.install = function (Vue) {
-  Vue.component(Button.name, Button)
+AlexButton.install = function (Vue) {
+  Vue.component(AlexButton.name, AlexButton)
 }
 
-export default Button
+export default AlexButton
