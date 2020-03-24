@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .alex-button {
   display: inline-block;
   line-height: 1;
@@ -61,7 +61,7 @@ export default {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  padding: 12px 20px;
+  padding: 8px 20px;
   font-size: 14px;
   border-radius: 4px;
   &:hover,
@@ -72,14 +72,14 @@ export default {
   }
 
   &__primary {
-    background-color: #36bbd9;
-    border-color: #36bbd9;
+    background-color: #409eff;
+    border-color: #409eff;
     color: #fff;
     &:hover,
     &:focus {
       color: #fff;
-      border-color: #239db9;
-      background-color: #239db9;
+      border-color: #3790ed;
+      background-color: #3790ed;
     }
   }
 

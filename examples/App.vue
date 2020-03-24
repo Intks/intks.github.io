@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <alex-button type="danger"
-                 disabled>按鈕</alex-button>
+    <alex-input type="text"
+                v-model="test">
+      <div slot="prefix">hii</div>
+    </alex-input>
+
+    <alex-button type="primary">hi</alex-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      test: null
+    }
+  }
 }
 </script>
 

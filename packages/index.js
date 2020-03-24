@@ -1,7 +1,9 @@
 import AlexButton from './button'
+import AlexInput from './input'
 
 const components = [
-  AlexButton
+  AlexButton,
+  AlexInput
 ]
 
 // 定義 install 方法，接收 Vue 作為參數。如果使用 use 註冊插件，則所有的組件都將被註冊
@@ -19,5 +21,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  AlexButton
+  AlexButton,
+  AlexInput
 }
